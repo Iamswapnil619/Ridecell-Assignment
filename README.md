@@ -1,4 +1,4 @@
-# ridecell-assignment
+# Ridecell-Assignment
 This Repository contains the assignment code for spark streaming.
 
 It includes the src code and pom file.
