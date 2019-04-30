@@ -11,10 +11,10 @@ object configurator {
       .builder
       .appName("Spark-Kafka-Integration")
       .master("local")
-      .config("spark.testing.memory","")
+      .config("spark.testing.memory","2147480000")
       .getOrCreate
 
-    val data = spark.read.option("header", "false").csv("C:/kafka/kafka-data/Input/ridecell-data.txt")
+    val data = spark.read.option("header", "false").csv("C:/kafka/kafka-data/Input/ridecell-data1.txt")
 
     //gateway service /api-calls
     val df = data.toDF("DateTime", "HTTP-METHODS", "GETWAY-SERVICE", "MICROSERVICE").withColumn("DateTime", unix_timestamp(col("DateTime"), "yyyy-MM-dd'T'HH:mm:ss.SSS").cast("timestamp"))
